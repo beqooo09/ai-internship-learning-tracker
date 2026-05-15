@@ -35,10 +35,17 @@ selected_status = st.sidebar.multiselect(
     default=df["Status"].unique()
 )
 
+selected_priority = st.sidebar.multiselect(
+    "Select Priority",
+    options=df["Priority"].unique(),
+    default=df["Priority"].unique()
+)
+
 # Apply filters
 filtered_df = df[
     (df["Topic"].isin(selected_topics)) &
-    (df["Status"].isin(selected_status))
+    (df["Status"].isin(selected_status)) &
+    (df["Priority"].isin(selected_priority))
 ]
 
 # =========================
@@ -74,14 +81,17 @@ completion_rate = (
     if total_tasks > 0 else 0
 )
 
+total_hours = filtered_df["Hours"].sum()
+
 st.subheader("Learning Progress Overview")
 
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3, col4, col5 = st.columns(5)
 
 col1.metric("Total Tasks", total_tasks)
 col2.metric("Completed", completed_tasks)
 col3.metric("In Progress", in_progress_tasks)
 col4.metric("Completion %", f"{completion_rate}%")
+col5.metric("Learning Hours", total_hours)
 
 # =========================
 # CHARTS
@@ -105,16 +115,33 @@ chart_col1.plotly_chart(fig_pie, use_container_width=True)
 
 # BAR CHART
 
-topic_counts = filtered_df["Topic"].value_counts()
+topic_counts = filtered_df.groupby("Topic")["Hours"].sum()
 
 fig_bar = px.bar(
     x=topic_counts.index,
     y=topic_counts.values,
-    labels={"x": "Topic", "y": "Number of Tasks"},
-    title="Tasks by Topic"
+    labels={"x": "Topic", "y": "Learning Hours"},
+    title="Learning Hours by Topic"
 )
 
 chart_col2.plotly_chart(fig_bar, use_container_width=True)
+
+# =========================
+# PRIORITY DISTRIBUTION
+# =========================
+
+st.subheader("Priority Distribution")
+
+priority_counts = filtered_df["Priority"].value_counts()
+
+fig_priority = px.bar(
+    x=priority_counts.index,
+    y=priority_counts.values,
+    labels={"x": "Priority", "y": "Tasks"},
+    title="Tasks by Priority"
+)
+
+st.plotly_chart(fig_priority, use_container_width=True)
 
 # =========================
 # DATA TABLE
