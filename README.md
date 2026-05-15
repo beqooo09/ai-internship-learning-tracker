@@ -56,7 +56,7 @@ Topics include:
 
 ## Screenshots
 
-_Add screenshots here later._
+.
 
 ---
 
