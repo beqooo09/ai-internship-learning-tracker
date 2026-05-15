@@ -1,9 +1,24 @@
 Topic,Task,Status,Hours
-Python,Practice functions,Completed,3
-Python,Build mini calculator,In Progress,4
-SQL,Practice joins,Completed,2
-SQL,Window functions,Not Started,5
-Machine Learning,Study regression,In Progress,6
-Deep Learning,Learn CNN basics,Not Started,7
-Cloud,Azure fundamentals,In Progress,4
-Databricks,Prepare assessment,Completed,5
+Python,Build REST API with FastAPI,Completed,45
+Python,Practice OOP concepts,Completed,28
+Python,Automate data workflows with Python,In Progress,32
+SQL,Master JOIN queries,Completed,38
+SQL,Practice window functions,In Progress,26
+SQL,Optimize analytical queries,Not Started,18
+Machine Learning,Build regression model,Completed,42
+Machine Learning,Study model evaluation metrics,Completed,24
+Machine Learning,Feature engineering practice,In Progress,30
+Deep Learning,Learn CNN fundamentals,In Progress,36
+Deep Learning,Build image classification mini project,Not Started,40
+Cloud,Study Azure fundamentals,Completed,34
+Cloud,Deploy small cloud project,In Progress,22
+Databricks,Prepare Databricks assessment,Completed,30
+Databricks,Practice Spark transformations,In Progress,27
+Data Engineering,Build ETL pipeline mini project,In Progress,48
+Data Engineering,Learn orchestration concepts,Not Started,20
+Pandas,Practice data cleaning workflows,Completed,25
+Pandas,Analyze large CSV datasets,Completed,19
+Git & GitHub,Practice branching and pull requests,Completed,14
+Git & GitHub,Collaborate using feature branches,Completed,11
+Portfolio Projects,Build AI internship dashboard,Completed,35
+Interview Prep,Practice technical interview questions,In Progress,21
