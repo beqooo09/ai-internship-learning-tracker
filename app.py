@@ -18,6 +18,58 @@ st.set_page_config(
 df = pd.read_csv("learning_data.csv")
 
 # =========================
+# AI RECOMMENDATION ENGINE
+# =========================
+
+def generate_ai_recommendations(data):
+    recommendations = []
+
+    incomplete_tasks = data[data["Status"] != "Completed"]
+    high_priority_incomplete = incomplete_tasks[
+        incomplete_tasks["Priority"] == "High"
+    ]
+
+    if len(high_priority_incomplete) > 0:
+        top_task = high_priority_incomplete.iloc[0]
+        recommendations.append(
+            f"Focus first on **{top_task['Task']}** in **{top_task['Topic']}** because it is high priority and not completed."
+        )
+
+    if len(incomplete_tasks) > 0:
+        topic_counts = incomplete_tasks["Topic"].value_counts()
+        weakest_topic = topic_counts.idxmax()
+
+        recommendations.append(
+            f"You have the most unfinished work in **{weakest_topic}**. Spend extra time there this week."
+        )
+
+    total_hours = data["Hours"].sum()
+
+    if total_hours < 20:
+        recommendations.append(
+            "Your total logged learning hours are still low. Try to reach at least **20 hours** as your next milestone."
+        )
+    else:
+        recommendations.append(
+            "Good progress on learning hours. Keep balancing practice projects with theory."
+        )
+
+    not_started = data[data["Status"] == "Not Started"]
+
+    if len(not_started) > 0:
+        next_task = not_started.iloc[0]
+        recommendations.append(
+            f"Start **{next_task['Task']}** next to avoid leaving too many tasks untouched."
+        )
+
+    if len(recommendations) == 0:
+        recommendations.append(
+            "Great work. All visible tasks are completed. Add new advanced tasks to keep progressing."
+        )
+
+    return recommendations
+
+# =========================
 # SIDEBAR FILTERS
 # =========================
 
@@ -41,7 +93,6 @@ selected_priority = st.sidebar.multiselect(
     default=df["Priority"].unique()
 )
 
-# Apply filters
 filtered_df = df[
     (df["Topic"].isin(selected_topics)) &
     (df["Status"].isin(selected_status)) &
@@ -55,7 +106,7 @@ filtered_df = df[
 st.title("AI Internship Learning Tracker")
 
 st.markdown("""
-Track your AI internship learning progress, skills, and study goals.
+Track your AI internship learning progress, skills, priorities, and study goals.
 """)
 
 # =========================
@@ -94,14 +145,23 @@ col4.metric("Completion %", f"{completion_rate}%")
 col5.metric("Learning Hours", total_hours)
 
 # =========================
+# AI RECOMMENDATIONS
+# =========================
+
+st.subheader("AI-Powered Study Recommendations")
+
+recommendations = generate_ai_recommendations(filtered_df)
+
+for recommendation in recommendations:
+    st.info(recommendation)
+
+# =========================
 # CHARTS
 # =========================
 
 st.subheader("Learning Analytics")
 
 chart_col1, chart_col2 = st.columns(2)
-
-# PIE CHART
 
 status_counts = filtered_df["Status"].value_counts()
 
@@ -113,13 +173,11 @@ fig_pie = px.pie(
 
 chart_col1.plotly_chart(fig_pie, use_container_width=True)
 
-# BAR CHART
-
-topic_counts = filtered_df.groupby("Topic")["Hours"].sum()
+topic_hours = filtered_df.groupby("Topic")["Hours"].sum()
 
 fig_bar = px.bar(
-    x=topic_counts.index,
-    y=topic_counts.values,
+    x=topic_hours.index,
+    y=topic_hours.values,
     labels={"x": "Topic", "y": "Learning Hours"},
     title="Learning Hours by Topic"
 )
@@ -170,4 +228,4 @@ st.markdown("""
 # =========================
 
 st.markdown("---")
-st.caption("Built with Python, Pandas, Streamlit, and Plotly.")
+st.caption("Built with Python, Pandas, Streamlit, Plotly, and rule-based AI recommendations.")
