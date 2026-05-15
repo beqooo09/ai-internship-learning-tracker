@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 
 # =========================
 # PAGE CONFIG
@@ -48,6 +49,39 @@ col3.metric("In Progress", in_progress_tasks)
 col4.metric("Completion %", f"{completion_rate}%")
 
 # =========================
+# CHARTS
+# =========================
+
+st.subheader("Learning Analytics")
+
+chart_col1, chart_col2 = st.columns(2)
+
+# PIE CHART
+
+status_counts = df["Status"].value_counts()
+
+fig_pie = px.pie(
+    values=status_counts.values,
+    names=status_counts.index,
+    title="Task Status Distribution"
+)
+
+chart_col1.plotly_chart(fig_pie, use_container_width=True)
+
+# BAR CHART
+
+topic_counts = df["Topic"].value_counts()
+
+fig_bar = px.bar(
+    x=topic_counts.index,
+    y=topic_counts.values,
+    labels={"x": "Topic", "y": "Number of Tasks"},
+    title="Tasks by Topic"
+)
+
+chart_col2.plotly_chart(fig_bar, use_container_width=True)
+
+# =========================
 # DATA TABLE
 # =========================
 
@@ -74,4 +108,4 @@ st.markdown("""
 # =========================
 
 st.markdown("---")
-st.caption("Built with Python, Pandas, and Streamlit.")
+st.caption("Built with Python, Pandas, Streamlit, and Plotly.")
