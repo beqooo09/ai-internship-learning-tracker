@@ -66,3 +66,24 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/beqooo09/ai-internship-learning-tracker.git
+
+
+Install dependencies:
+pip install -r requirements.txt
+
+Run the app:
+python -m streamlit run app.py
+
+Future Improvements:
+
+Edit/Delete tasks
+Authentication system
+User accounts
+Real OpenAI API integration
+Machine learning predictions
+Weekly progress tracking
+Database integration
+
+Author
+
+Built by Beqir as part of AI/Data internship preparation.
