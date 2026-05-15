@@ -1,9 +1,9 @@
-Topic,Task,Status
-Python,Practice functions,Completed
-Python,Build mini calculator,In Progress
-SQL,Practice joins,Completed
-SQL,Window functions,Not Started
-Machine Learning,Study regression,In Progress
-Deep Learning,Learn CNN basics,Not Started
-Cloud,Azure fundamentals,In Progress
-Databricks,Prepare assessment,Completed
+Topic,Task,Status,Hours,Priority
+Python,Practice functions,Completed,3,High
+Python,Build mini calculator,In Progress,4,Medium
+SQL,Practice joins,Completed,2,High
+SQL,Window functions,Not Started,5,Medium
+Machine Learning,Study regression,In Progress,6,High
+Deep Learning,Learn CNN basics,Not Started,7,Low
+Cloud,Azure fundamentals,In Progress,4,Medium
+Databricks,Prepare assessment,Completed,5,High
