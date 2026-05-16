@@ -1,0 +1,35 @@
+Topic,Task,Status,Hours
+Python,Practice functions and OOP concepts,Completed,18
+Python,Build small automation scripts,Completed,14
+Python,Build REST API with FastAPI,In Progress,16
+Python,Practice file handling and CSV processing,Completed,9
+SQL,Practice JOIN queries,Completed,16
+SQL,Practice window functions,In Progress,12
+SQL,Build reporting queries,Completed,10
+Pandas,Practice data cleaning workflows,Completed,14
+Pandas,Analyze CSV datasets,Completed,11
+Machine Learning,Study regression models,Completed,16
+Machine Learning,Learn model evaluation metrics,Completed,10
+Machine Learning,Build classification pipeline,In Progress,14
+Deep Learning,Learn neural network basics,In Progress,12
+Deep Learning,Study CNN fundamentals,Not Started,8
+Computer Vision,Study salient object detection concepts,Completed,18
+Computer Vision,Review image segmentation techniques,In Progress,10
+Cloud,Study Azure fundamentals,Completed,15
+Cloud,Learn Docker basics,In Progress,10
+Databricks,Prepare Databricks assessment,Completed,24
+Databricks,Pass Databricks certification assessment,Completed,6
+Databricks,Practice Spark transformations,Completed,14
+Data Engineering,Build ETL pipeline mini project,In Progress,20
+Data Engineering,Study data warehousing concepts,Completed,12
+GitHub,Practice commits branches and pull requests,Completed,8
+GitHub,Manage GitHub repository workflow,Completed,6
+Streamlit,Build interactive dashboard layouts,Completed,14
+Streamlit,Implement filters and analytics charts,Completed,12
+Streamlit,Deploy Streamlit application online,Completed,6
+AI Features,Build local AI study coach system,Completed,10
+AI Features,Build AI interview practice mode,Completed,12
+Portfolio Projects,Build AI internship learning tracker,Completed,26
+Portfolio Projects,Improve README and project documentation,Completed,5
+Interview Prep,Practice technical interview questions,In Progress,10
+Interview Prep,Review Python and SQL interview concepts,In Progress,8

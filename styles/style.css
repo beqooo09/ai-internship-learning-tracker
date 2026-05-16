@@ -1,0 +1,59 @@
+.stApp {
+    background: linear-gradient(135deg, #0f172a 0%, #111827 45%, #020617 100%);
+    color: #f8fafc;
+}
+
+h1, h2, h3 {
+    color: #f8fafc;
+}
+
+.main-title {
+    font-size: 44px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #cbd5e1;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.15);
+    color: #7dd3fc;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+div[data-testid="stMetric"] {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    padding: 16px;
+    border-radius: 16px;
+}
+
+div[data-testid="stMetricLabel"] {
+    color: #cbd5e1;
+}
+
+div[data-testid="stMetricValue"] {
+    color: #38bdf8;
+}
+
+.stDataFrame {
+    border-radius: 16px;
+}
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
