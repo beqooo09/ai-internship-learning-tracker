@@ -186,5 +186,5 @@ Database integration
 
 Author
 
-Built by Beqir as part of AI/Data internship preparation.
->>>>>>> d709e5ad410029cb0d9ac27a71ecf14358406b51
+Built by Beqir Bytyci as part of AI internship preparation.
+
