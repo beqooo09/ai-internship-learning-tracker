@@ -1,34 +1,39 @@
 Topic,Task,Status,Hours
-Python,Practice functions and OOP concepts,Completed,18
-Python,Build small automation scripts,Completed,14
-Python,Build REST API with FastAPI,In Progress,16
-Python,Practice file handling and CSV processing,Completed,9
-SQL,Practice JOIN queries,Completed,16
-SQL,Practice window functions,In Progress,12
-SQL,Build reporting queries,Completed,10
-Pandas,Practice data cleaning workflows,Completed,14
-Pandas,Analyze CSV datasets,Completed,11
-Machine Learning,Study regression models,Completed,16
-Machine Learning,Learn model evaluation metrics,Completed,10
-Machine Learning,Build classification pipeline,In Progress,14
-Deep Learning,Learn neural network basics,In Progress,12
-Deep Learning,Study CNN fundamentals,Not Started,8
-Computer Vision,Study salient object detection concepts,Completed,18
-Computer Vision,Review image segmentation techniques,In Progress,10
-Cloud,Study Azure fundamentals,Completed,15
-Cloud,Learn Docker basics,In Progress,10
+Python,Practice functions and OOP concepts,Completed,20
+Python,Build small automation scripts,Completed,16
+Python,Build REST API with FastAPI,Completed,20
+Python,Practice file handling and CSV processing,Completed,12
+Python,Study decorators and generators,Completed,14
+SQL,Practice JOIN queries,Completed,18
+SQL,Practice window functions,Completed,16
+SQL,Build reporting queries,Completed,12
+SQL,Optimize SQL queries,Completed,10
+Pandas,Practice data cleaning workflows,Completed,16
+Pandas,Analyze CSV datasets,Completed,12
+Pandas,Build mini analytics workflows,Completed,10
+Machine Learning,Study regression models,Completed,18
+Machine Learning,Learn model evaluation metrics,Completed,14
+Machine Learning,Build classification pipeline,Completed,20
+Machine Learning,Study feature engineering,Completed,12
+Deep Learning,Learn neural network basics,In Progress,18
+Deep Learning,Study CNN fundamentals,Not Started,14
+Computer Vision,Study salient object detection concepts,Completed,20
+Computer Vision,Review image segmentation techniques,Completed,16
+Cloud,Study Azure fundamentals,Completed,16
+Cloud,Learn Docker basics,In Progress,14
+Cloud,Practice cloud deployment basics,Completed,10
 Databricks,Prepare Databricks assessment,Completed,24
-Databricks,Pass Databricks certification assessment,Completed,6
-Databricks,Practice Spark transformations,Completed,14
-Data Engineering,Build ETL pipeline mini project,In Progress,20
-Data Engineering,Study data warehousing concepts,Completed,12
-GitHub,Practice commits branches and pull requests,Completed,8
-GitHub,Manage GitHub repository workflow,Completed,6
-Streamlit,Build interactive dashboard layouts,Completed,14
-Streamlit,Implement filters and analytics charts,Completed,12
-Streamlit,Deploy Streamlit application online,Completed,6
-AI Features,Build local AI study coach system,Completed,10
-AI Features,Build AI interview practice mode,Completed,12
-Portfolio Projects,Build AI internship learning tracker,Completed,26
-Portfolio Projects,Improve README and project documentation,Completed,5
-AZURE,to learn,In Progress,25
+Databricks,Pass Databricks certification assessment,Completed,8
+Databricks,Practice Spark transformations,Completed,18
+Data Engineering,Build ETL pipeline mini project,In Progress,24
+Data Engineering,Study data warehousing concepts,Completed,14
+GitHub,Practice commits branches and pull requests,Completed,10
+GitHub,Manage GitHub repository workflow,Completed,8
+Streamlit,Build interactive dashboard layouts,Completed,18
+Streamlit,Implement filters and analytics charts,Completed,14
+Streamlit,Deploy Streamlit application online,Completed,8
+AI Features,Build local AI study coach system,Completed,14
+AI Features,Build smart learning recommender,Completed,16
+Portfolio Projects,Build AI internship learning tracker,Completed,28
+Portfolio Projects,Improve README and project documentation,Completed,8
+Portfolio Projects,Prepare mentor project presentation,Completed,6

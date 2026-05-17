@@ -1,4 +1,4 @@
-from utils.recommendation_engine import generate_learning_recommendations
+from utils.recommender import generate_smart_recommendations
 import random
 
 import streamlit as st
@@ -43,21 +43,18 @@ filtered_df = df[
 ]
 
 
-st.markdown(
-    """
-    <div class="main-title">AI Internship Learning Tracker</div>
-    <div class="subtitle">
-        A personal dashboard for tracking internship learning, technical progress,
-        AI preparation, and interview readiness.
-    </div>
-    <span class="badge">Streamlit</span>
-    <span class="badge">Python</span>
-    <span class="badge">Pandas</span>
-    <span class="badge">Plotly</span>
-    <span class="badge">Local AI</span>
-    """,
-    unsafe_allow_html=True
-)
+st.subheader("Smart Learning Recommender")
+
+smart_recommendations = generate_smart_recommendations(filtered_df)
+
+if len(smart_recommendations) == 0:
+    st.info("Complete more tasks to activate personalized ML recommendations.")
+else:
+    for item in smart_recommendations:
+        st.info(
+            f"Recommended next task: **{item['Task']}** "
+            f"({item['Topic']}) — Similarity Score: **{item['Similarity Score']}%**"
+        )
 
 
 st.subheader("Internship Achievements")
@@ -132,15 +129,15 @@ col3.metric("Completion %", f"{completion_rate}%")
 col4.metric("Learning Hours", total_hours)
 
 
-st.subheader("AI Study Coach")
+st.subheader("Study Coach")
 
 coach_col1, coach_col2 = st.columns([1, 2])
 
 with coach_col1:
-    generate_plan = st.button("Generate AI Study Plan", use_container_width=True)
+    generate_plan = st.button("Generate Study Plan", use_container_width=True)
 
 with coach_col2:
-    st.caption("Creates a local AI-based 7-day study plan using your incomplete tasks.")
+    st.caption("Creates a local 7-day study plan using your incomplete tasks.")
 
 if generate_plan:
     ai_plan = generate_local_ai_plan(filtered_df)
@@ -186,12 +183,15 @@ with practice_col2:
         st.info("Choose a topic and generate a question to start practicing.")
 
 
-st.subheader("AI Recommendation Engine")
+st.subheader("Smart Learning Recommender")
 
-recommendations = generate_learning_recommendations(filtered_df)
+smart_recommendations = generate_smart_recommendations(filtered_df)
 
-for rec in recommendations:
-    st.info(rec)
+for rec in smart_recommendations:
+    st.info(
+        f"Recommended next task: {rec['Task']} "
+        f"({rec['Topic']}) — Similarity Score: {rec['Similarity Score']}%"
+    )
 
 
 
@@ -223,5 +223,6 @@ st.dataframe(
 
 st.markdown("---")
 st.caption(
-    "Built with Python, Pandas, Streamlit, Plotly, Local AI logic, and interview practice mode."
+    "Internship learning tracker built with Python, Streamlit, analytics, and ML-based recommendations."
+)
 )
