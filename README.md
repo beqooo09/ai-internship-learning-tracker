@@ -56,7 +56,17 @@ Topics include:
 
 ## Screenshots
 
-_Add screenshots here later._
+## Screenshots
+
+### Dashboard Overview
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+### AI Interview Practice Mode
+
+![Interview Mode](screenshots/interview_mode.png)
 
 ---
 
