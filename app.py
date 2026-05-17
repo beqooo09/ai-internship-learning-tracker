@@ -1,3 +1,4 @@
+from utils.recommendation_engine import generate_learning_recommendations
 import random
 
 import streamlit as st
@@ -146,7 +147,7 @@ if generate_plan:
     st.markdown(ai_plan)
 
 
-st.subheader("AI Interview Practice Mode")
+st.subheader("Learning Practice")
 
 practice_col1, practice_col2 = st.columns([1, 2])
 
@@ -157,7 +158,7 @@ with practice_col1:
     )
 
     generate_question = st.button(
-        "Generate Interview Question",
+        "Generate Practice Question",
         use_container_width=True
     )
 
@@ -183,6 +184,15 @@ with practice_col2:
             st.markdown(question_data["example"])
     else:
         st.info("Choose a topic and generate a question to start practicing.")
+
+
+st.subheader("AI Recommendation Engine")
+
+recommendations = generate_learning_recommendations(filtered_df)
+
+for rec in recommendations:
+    st.info(rec)
+
 
 
 st.subheader("Learning Analytics")
