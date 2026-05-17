@@ -225,4 +225,3 @@ st.markdown("---")
 st.caption(
     "Internship learning tracker built with Python, Streamlit, analytics, and ML-based recommendations."
 )
-)
